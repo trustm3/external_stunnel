@@ -1,0 +1,26 @@
+stunnel-5.07 is the original source code extracted from 
+https://www.stunnel.org/downloads/stunnel-5.07.tar.gz
+
+config.h was generated with following commands:
+
+  mkdir configure
+  cd configure
+  A../stunnel-5.07/configure --build=i686-pc-linux-gnu --host=arm-linux-androideabi --prefix=/data/local --with-ssl=../../../external/openssl
+  cd ..
+  cp configure/src/config.h .
+
+afterwars some dupllicate definitions and not present features in bionic
+were commented out:
+
+// #define HAVE_ACCEPT4 1
+// #define HAVE_ENDHOSTENT 1
+// #define HAVE_MALLOC_H 1
+// #define HAVE_OPENPTY 1
+// #define HAVE_PTY_H 1
+// #define HAVE_STROPTS_H 1
+// #define USE_IPv6 1
+
+and also the path to to OpenSSL was corrected for Android build
+
+#define SSLDIR "external/openssl"
+
