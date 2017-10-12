@@ -16,12 +16,12 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_C_INCLUDES := \
 	external/stunnel \
 	external/sqlite/dist \
-	external/openssl/include \
+	external/openssl_legacy/include \
 	external/zlib
 
 LOCAL_STATIC_LIBRARIES := \
-	libssl_static \
-        libcrypto_static \
+        openssl_libssl_static \
+        openssl_libcrypto_static \
         libcutils \
         liblog \
         libdl-static \
